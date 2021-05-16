@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>图书管理</title>
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/management.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/bootstrap-theme.css"/>
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="application/javascript" src="js/bootstrap.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/style.css" >
+	<script type="application/javascript" src="js/webstore.js"></script>
+<!--	<script type="application/javascript">-->
+<!--		$(function () {-->
+<!--			$("#deleteClass").click(function () {-->
+<!--				alert("qq");-->
+<!--				return confirm("你确定要删除【"+$(this).parent().parent().find("td:first").text()+"】")-->
+<!--					}-->
+<!--			);-->
+<!--				}-->
+<!--		)-->
+<!--	</script>-->
+
+</head>
+<body>
+	
+	<div id="header">
+			<span class="wel_word">图书管理系统</span>
+	</div>
+	
+	<div id="main">
+		<table>
+			<tr>
+				<th>书名</th>
+				<th>作者</th>
+				<th>定价</th>
+				<th>销量</th>
+				<th>库存</th>
+				<th>详细描述</th>
+				<th>书籍封面</th>
+				<th>操作</th>
+				<th >操作</th>
+			</tr>
+			<div th:each="product:${pageDTO.data}">
+
+				<tr>
+					<td th:text="${product.getName()}" id="productName"></td>
+					<td th:text="${product.getAuthor()}"></td>
+					<td th:text="${product.getPrice()}"></td>
+					<td th:text="${product.getSales()}"></td>
+					<td th:text="${product.getStock()}"></td>
+					<td th:text="${product.getMessage()}"></td>
+					<td ><img style="width: 30px;height: 30px;" th:src="'/'+${product.getImgPath()}"></td>
+					<td ><a th:href="'/edit/update?id='+${product.getId()}+'&type='+${product.getType()}"><input type="button" value="修改" /></a></td>
+					<form action="/manage/delete" method="post">
+						<input type="hidden" name="id" th:value="${product.getId()}">
+						<input type="hidden" name="type" th:value="${product.getType()}">
+					<td ><input type="submit" onclick="deleteB()" value="删除"/></td>
+					</form>
+				</tr>
+			</div>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><a href="/edit/insert">添加书籍</a></td>
+			</tr>
+		</table>
+		<nav aria-label="Page navigation" class="index_page_nav">
+			<ul  style="margin-left: 40%" class="paginationmanage pagination">
+				<li th:if="${pageDTO.hasfirst}">
+					<a th:href="@{/manage(page=1)}" aria-label="Previous">
+						<span aria-hidden="true">&lt;&lt;</span>
+					</a>
+				<li th:if="${pageDTO.hasprivious}">
+					<a th:href="@{/manage(page=${pageDTO.page}-1)}" aria-label="Previous">
+						<span aria-hidden="true">&lt;</span>
+					</a>
+				</li>
+				<li th:each="page:${pageDTO.pages}" th:class="${pageDTO.page==page}?'active':''">
+					<!--                        注意单引号和双引号在th中错开使用-->
+					<a th:href="@{/manage(page=${page})}" th:text="${page}">1</a></li>
+
+				<li th:if="${pageDTO.hasnext}">
+					<a th:href="@{/manage(page=${pageDTO.page}+1)}" aria-label="Previous">
+						<span aria-hidden="true">&gt;</span>
+					</a>
+				<li th:if="${pageDTO.haslast}">
+					<a th:href="@{/manage(page=${pageDTO.totalPage})}" aria-label="Previous">
+						<span aria-hidden="true">&gt;&gt;</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<div class="management_copyright">&copy;jinan vocational collage</div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+.killstore_center{
+	position: absolute;
+	top: 85px;
+	width: 100%;
+	height: 22%;
+}
+.killstore_center_logo{
+	float: left;
+	width: 17%;
+	height: 100%;
+	margin-left: 15%;
+}
+.killstore_center_logo > img{
+	width: 100%;
+	height: 100%;
+}
+.killstore_center_search{
+	float: left;
+	margin-left: 5%;
+	width: 45%;
+	height: 14%;
+}
+.killstore_center_search > form{
+	display: block;
+	font-size: 0px;
+	margin-top: 40px;
+}
+.killstore_search{
+	width: 84%;
+	height: 60px;
+	border: 3px solid #e36e0f;
+	vertical-align: middle;
+	font-size: 18px;
+}
+.killstore_button{
+	width: 15%;
+	height: 60px;
+	background-color: #E36E0F;
+	font-size: 20px;
+	color: #ffffff;
+	vertical-align: middle;
+}
+.killstore_link{
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	top: 260px;
+	left: 0;
+	background-color: #E36E0F;
+}
+.killstore_link > span{
+	font-size: 20px;
+	font-weight: bold;
+	color: #000000;
+	line-height: 50px;
+	margin-left: 12%;
+	float: left;
+}
+.killstore_seckill{
+	float: left;
+	margin-left: 5%;
+	line-height: 50px;
+	font-size: 20px;
+}
+.killstore_main{
+	width: 80%;
+	height: 60%;
+	border: 1px solid #000000;
+	position: absolute;
+	top: 320px;
+	left: 10%;
+}
+.killstore_main > ul{
+	width: 100%;
+	height: 100%;
+}
+.killstore_main > ul > li{
+	float: left;
+	list-style: none;
+	margin-left: 4.25%;
+	width: 25%;
+	height: 93%;
+	border: 1px solid #000000;
+}
+.killstore_main > ul > li > a > img{
+	width: 100%;
+	height: 80%;
+}
+.killstore_main > ul > li > p{
+	text-align: center;
+}
+.killstore_copyright{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	position: absolute;
+	top: 800px;
+}
+.killstore_main > .aa{
+	float: left;
+	width: 30%;
+	width: 30%;
+}
+
+/*.index_main_text{*/
+/*	width: 20%;*/
+/*	height: 450px;*/
+/*	margin-left: 5%;*/
+/*	float: left;*/
+/*}*/
+
+/*.index_main_text > span{*/
+/*	text-align: center;*/
+/*	font-size: 18px;*/
+/*}*/

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0",minimum-scale=1.0,maximum-scale=1.0 />
+		<link rel="stylesheet" href="css/management.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/bootstrap-theme.css"/>
+		<link href="css/base.css" rel="stylesheet" />
+		<link href="css/index.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="top">
+			<ul>
+				<li><a href="/login" th:text="${session.user == null}?'亲，请登录':'欢迎您:'+${session.user.getName()}"></a></li>
+				<li><a href="/regist" th:text="${session.user == null}?'免费注册':''"></a></li>
+				<li><a href="/manage" th:text="${session.type == 1}?'图书管理':''">图书管理</a></li>
+				<li><a href="/orderItem">订单管理</a></li>
+			</ul>
+		</div>
+		<div class="index_center">
+			<div class="index_center_logo"><img src="images/dangdang.png"/></div>
+			<div class="index_center_search">
+				<form method="get">
+					<input type="text" name="search" class="index_search" />
+					<input type="submit" value="搜索" class="index_button" />
+				</form>
+			</div>
+			<div class="index_center_anshi"><a href="/seckill"><img style="width: 270px;height: 140px;" src="images/seckillr.jpg"/></a></div>
+		</div>
+		<div class="index_link">
+			<ul>
+				<li><a href="/">古代文学类</a></li>
+				<li><a href="/?type=2">学术研究类</a></li>
+				<li><a href="/?type=3">外国综合类</a></li>
+				<li><a href="/?type=4">自然人文类</a></li>
+				<li><a href="/?type=5">试题教育类</a></li>
+			</ul>
+		</div>
+		<div class="index_main">
+			<div th:each="product:${pageDTO.data}" class="index_main_text">
+				<a href="#"><img style="width: 200px;height: 200px;" th:src="'/'+${product.getImgPath()}" alt=""></a><br />
+				<a th:href="'/item?id='+${product.getId()}+'&type='+${product.getType()}"><span th:text="${product.getName()}"></span></a><br />
+				<span>作者&nbsp;</span><span th:text="${product.getAuthor()}"></span><br />
+				<span>价格&nbsp;</span><span th:text="${product.getPrice()}"></span>
+			</div>
+			<nav aria-label="Page navigation" class="index_page_nav" style="position: absolute;top: 95%;left: 35%;width: 500px;">
+				<ul class="pagination">
+					<li th:if="${pageDTO.hasfirst}">
+						<a th:href="@{/(page=1,type=${pageDTO.getType()},search=${search})}" aria-label="Previous">
+							<span aria-hidden="true">&lt;&lt;</span>
+						</a>
+					<li th:if="${pageDTO.hasprivious}">
+						<a th:href="@{/(page=${pageDTO.page}-1,type=${pageDTO.getType()},search=${search})}" aria-label="Previous">
+							<span aria-hidden="true">&lt;</span>
+						</a>
+					</li>
+					<li th:each="page:${pageDTO.pages}" th:class="${pageDTO.page==page}?'active':''">
+						<!--                        注意单引号和双引号在th中错开使用-->
+						<a th:href="@{/(page=${page},type=${pageDTO.getType()},search=${search})}" th:text="${page}">1</a></li>
+
+					<li th:if="${pageDTO.hasnext}">
+						<a th:href="@{/(page=${pageDTO.page}+1,type=${pageDTO.getType()},search=${search})}" aria-label="Previous">
+							<span aria-hidden="true">&gt;</span>
+						</a>
+					</li>
+					<li th:if="${pageDTO.haslast}">
+						<a th:href="@{/(page=${pageDTO.totalPage},type=${pageDTO.getType()},search=${search})}" aria-label="Previous">
+							<span aria-hidden="true">&gt;&gt;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="index_copyright">当当书城&copy;jinan vocational collage</div>
+	</body>
+</html>

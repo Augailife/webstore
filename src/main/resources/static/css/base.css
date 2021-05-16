@@ -1,0 +1,34 @@
+.top{
+	width: 100%;
+	height: 50px;
+	top: 0;
+	left: 0;
+	position: fixed;
+	z-index: 1000;
+	background-color: #F5F5F5;
+	display: block;
+}
+.top > ul > li{
+	font-size: 14px;
+	color: #000000;
+	float: left;
+	margin-left: 20px;
+	list-style: none;
+}
+.top > ul > li > a{
+	text-decoration: none;
+	color: #000000;
+}
+.top > ul > li > a:hover{
+	color: #eb9316;
+}
+.index_center_logo{
+	float: left;
+	width: 270px;
+	height: 140px;
+	margin-left: 5%;
+}
+.index_center_logo > img{
+	width: 270px;
+	height: 140px;
+}

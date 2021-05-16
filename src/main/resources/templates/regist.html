@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>注册</title>
+		<link rel="stylesheet" href="../static/css/regist.css" />
+		<link rel="stylesheet" href="../static/css/base.css" />
+	</head>
+	<body>
+		<div class="top">
+			<ul>
+				<li><a href="login.html">亲，请登录</a></li>
+				<li><a href="register.html">免费注册</a></li>
+				<li><a href="index.html">书籍网站首页</a></li>
+			</ul>
+		</div>
+		<div class="register_top"><img src="../static/images/夜晚烟花.jpg" /></div>
+		<div class="divAll"> 
+		    <div id="titles">新用户注册</div>
+			<span th:text="message" class="register_hint"></span><br />
+		    <div id="contents"> 
+				<h3>基本信息</h3> 
+		        <hr width="95%" color="#f2f2f2"/> 
+		        <form action="#" onSubmit="return checkForm()"> 
+					<div id="form-itemGroup"> 
+					    <label for="userName">用户名：</label> 
+					    <input type="text" id="userName" class="userName" onBlur="checkUserName()" oninput="checkUserName()"> 
+					    <span class="default" id="nameErr">请输入至少2位的用户名</span> 
+					</div> 
+					<div id="form-itemGroup"> 
+					    <label for="userPasword">密码：</label> 
+					    <input type="password" id="userPasword" class="userName" onBlur="checkPassword()" oninput="checkPassword()"> 
+					    <span class="default" id="passwordErr">请输入4到8位的密码</span> 
+					</div> 
+					<div id="form-itemGroup"> 
+					    <label for="userConfirmPasword">确认密码：</label> 
+					    <input type="password" id="userConfirmPasword" class="userName" onBlur="ConfirmPassword()" oninput="ConfirmPassword()"> 
+					    <span class="default" id="conPasswordErr">请再输入一遍密码</span> 
+					</div> 
+					<div id="form-itemGroup">
+					    <label for="userMail">电子邮箱：</label> 
+					    <input type="text" id="userMail" class="userName" onBlur="checkMail()" oninput="checkMail()"> 
+					    <span class="default" id="mailErr">请输入电子邮箱</span> 
+					</div> 
+					<div id="form-itemGroup"> 
+					    <label for="userPhone">手机号码：</label> 
+					    <input type="text" id="userPhone" class="userName" onBlur="checkPhone()" oninput="checkPhone()"> 
+					    <span class="default" id="phoneErr">请输入11位手机号码</span> 
+					</div> 
+					<div> 
+					<button type="submit" class="divBtn">注册</button> 
+					</div> 
+				</form> 
+			</div> 
+		</div>
+		<div class="register_copyright">&copy;jinan vocational collage</div>
+		<script src="../static/js/regist.js"></script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+.publicity_center{
+	position: absolute;
+	top: 85px;
+	width: 100%;
+	height: 140px;
+}
+.publicity_center_logo{
+	float: left;
+	width: 270px;
+	height: 140px;
+	margin-left: 15%;
+}
+.publicity_center_logo > img{
+	width: 270px;
+	height: 140px;
+}
+.publicity_center > h1{
+	float: left;
+	position: absolute;
+	right: 30%;
+	line-height: 100px;
+}
+.publicity_main{
+	width: 80%;
+	height: 450px;
+	position: absolute;
+	top: 270px;
+	left: 10%;
+	background-color: #E36E0F;
+	border-radius: 8px;
+}
+.publicity_main_title{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+}
+.publicity_main_title > h2{
+	color: #000000;
+	line-height: 40px;
+}
+.publicity_main_table{
+	width: 90%;
+	height: 300px;
+}
+.publicity_main_table > table{
+	width: 90%;
+	height: 300px;
+	position: absolute;
+	left: 5%;
+	border: 3px solid #000000; 
+	border-radius: 6px; 
+	background-color: #FFFFFF;
+	text-align: center;
+}
+.publicity_copyright{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	position: absolute;
+	top: 740px;
+}

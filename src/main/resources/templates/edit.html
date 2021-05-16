@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑图书</title>
+    <style type="text/css">
+        input {
+            text-align: center;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="../css/style.css" >
+    <link rel="stylesheet" href="../css/insert.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+</head>
+<body>
+<div id="header">
+    <span class="wel_word">编辑图书</span>
+</div>
+
+<div id="main">
+            <table>
+
+                <div th:if="${product!=null}">
+                    <tr>
+                        <th class="management_table_thtd">书名</th>
+                        <th class="management_table_thtd">作者</th>
+                        <th class="management_table_thtd">定价</th>
+                        <th class="management_table_thtd">销量</th>
+                        <th class="management_table_thtd">库存</th>
+                        <th class="management_table_thtd">类型</th>
+                        <th class="management_table_thtd">详细描述</th>
+                        <th class="management_table_thtd">书籍封面</th>
+                        <th class="management_table_thtd">操作</th>
+                        <th class="management_table_thtd">操作</th>
+                    </tr>
+                    <form action="/manage/update" method="post" enctype="multipart/form-data">
+                    <tr>
+                        <input type="hidden" name="id" th:value="${product.getId()}">
+                        <td><input th:value="${product.getName()}" name="name"></td>
+                        <td><input th:value="${product.getAuthor()}" name="author"></td>
+                        <td><input th:value="${product.getPrice()}" name="price"></td>
+                        <td><input th:value="${product.getSales()}" name="sales"></td>
+                        <td><input th:value="${product.getStock()}" name="stock"></td>
+                        <td><input th:value="${product.getType()}" name="type"></td>
+                        <td><input th:value="${product.getMessage()}" name="message"></td>
+                        <td><img style="width: 30px;height: 30px;" th:src="'/'+${product.getImgPath()}"></td>
+                        <td>
+                            <input type="file" name="file"/>
+                        </td>
+                        <td><input type="submit" value="提交"/></td>
+                    </tr>
+                    </form>
+                </div>
+                <div th:if="${product==null}">
+                    <tr>
+                        <th class="management_table_thtd">书名</th>
+                        <th class="management_table_thtd">作者</th>
+                        <th class="management_table_thtd">定价</th>
+                        <th class="management_table_thtd">销量</th>
+                        <th class="management_table_thtd">库存</th>
+                        <th class="management_table_thtd">类型</th>
+                        <th class="management_table_thtd">详细描述</th>
+                        <th class="management_table_thtd">书籍封面</th>
+                        <th class="management_table_thtd">操作</th>
+                    </tr>
+                    <form action="/manage/insert" method="post" enctype="multipart/form-data">
+                    <tr>
+                        <td><input name="name"></td>
+                        <td><input name="author"></td>
+                        <td><input name="price"></td>
+                        <td><input name="sales"></td>
+                        <td><input name="stock"></td>
+                        <td><input name="type"></td>
+                        <td><input name="message"></td>
+                        <td>
+                            <input type="file" name="file" />
+                        </td>
+                        <td><input type="submit" value="提交" /></td>
+                    </tr>
+                    </form>
+                </div>
+            </table>
+        </form>
+</div>
+</body>
+</html>

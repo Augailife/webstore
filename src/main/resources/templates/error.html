@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>错误反馈</title>
+		<link rel="stylesheet" href="css/error.css" />
+	</head>
+	<body>
+		<div class="error-main">
+			<span>出错啦</span>
+			<P th:text="${message}"></P>
+			<a href="/"><input type="button" value="返回商城" /></a>
+		</div>
+		
+	</body>
+</html>

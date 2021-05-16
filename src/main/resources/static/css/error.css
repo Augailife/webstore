@@ -1,0 +1,29 @@
+.error-main{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 30%;
+	left: 0;
+}
+.error-main > span{
+	font-size: 60px;
+	color: #000000;
+	font-weight: bold;
+	margin-left: 43%;
+}
+.error-main > p{
+	font-size: 16px;
+	color: gray;
+	margin-left: 38%;
+}
+.error-main > a > input{
+	background-color: #87CEFA;
+	width: 80px;
+	height: 40px;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-radius: 6px;
+	border: 0px;
+	margin-left: 50%;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>用户注册</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/register.css" />
+	</head>
+	<body>
+		<div class="top">
+			<ul>
+				<li><a href="/login">亲，请登录</a></li>
+				<li><a href="/regist">免费注册</a></li>
+				<li><a href="/">书籍网站首页</a></li>
+			</ul>
+		</div>
+		<div class="register_top"><img src="images/dangdang.png" /></div>
+		<div class="register_main">
+			<p class="register_main_p">新用户注册</p>
+			<form action="/regist" method="post">
+				<div class="register_main_group">
+					<span th:text="message"></span>
+					<p>用户姓名</p>
+					<input id="user" type="text" name="name" class="in" onblur="checkUser()" />
+					<span id="user_prompt"></span>
+				</div>
+				<div class="register_main_group">
+					<p>输入密码</p>
+					<input id="pwd" type="password" name="pwd" class="in"  onblur="checkPwd()"/>
+					<span id="pwd_prompt"></span>
+				</div>
+			    <div class="register_main_group">
+					<p>确认密码</p>
+					<input id="repwd" type="password" class="in"  onblur="checkRepwd()"/>
+					<span id="repwd_prompt"></span>
+				</div>
+				<div class="register_main_group">
+					<p>电子邮箱</p>
+					<input id="email" type="text" name="email" class="in"  onblur="checkEmail()"/>
+					<span id="email_prompt"></span>
+				</div>
+				<div class="register_main_group">
+					<p>手机号码</p>
+					<input id="mobile" type="text" name="phone" class="in" onblur="checkMobile()" />
+					<span id="mobile_prompt"></span>
+				</div>
+				<input type="submit" value="注册" class="register_main_button" />
+			</form>
+		</div>
+		<div class="register_copyright">&copy;jinan vocational collage</div>
+		<script src="js/register.js" type="text/javascript"></script>
+	</body>
+</html>

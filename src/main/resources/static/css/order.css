@@ -1,0 +1,100 @@
+.order_link{
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	top: 48px;
+	left: 0;
+	background-color: #E36E0F;
+}
+.order_link > h2{
+	float: left;
+	margin-left: 10%;
+	line-height: 60px;
+}
+.order_link > form{
+	float: left;
+	margin-left: 40%;
+	line-height: 100px;
+	font-size: 0px;
+}
+.order_link > form >input{
+	font-size: 20px;
+	color: #000000;
+	height: 50px;
+}
+.order_search{
+	width: 400px;
+	vertical-align: middle;
+}
+.order_button{
+	width: 100px;
+	vertical-align: middle;
+}
+.order_information{
+	width: 100%;
+	height: 70px;
+	border: 1px solid #000000;
+	position: absolute;
+	top: 160px;
+	left: 0;
+}
+.order_information > p{
+	line-height: 40px;
+	font-size: 16px;
+	margin-left: 30%;
+}
+.order_order{
+	width: 100%;
+	height: 650px;
+	position: absolute;
+	top: 260px;
+	left: 0;
+	border: 1px solid #000000;
+}
+.order_order_title{
+	background-color: #E36E0F;
+	font-size: 20px;
+	height: 50px;
+	line-height: 50px;
+}
+.order_order_title > p{
+	text-align: center;
+}
+.order_order_title1{
+	height: 50px;
+	border: 1px solid #000000;
+}
+.order_order_title1 > ul > li{
+	list-style: none;
+	margin-left: 12%;
+	float: left;
+}
+.order_form{
+	border: 1px solid #000000;
+	position: absolute;
+	top: 124px;
+	left: 10%;
+	width: 80%;
+	height: 500px;
+	background-color: #FF0000;
+}
+.order_form_shop{
+	height: 100px;
+	background-color: #E36E0F;
+}
+.order_form_shop > p{
+	font-size: 20px;
+}
+.order_form_shop > img{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+.index_copyright{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	position: absolute;
+	top: 930px;
+}

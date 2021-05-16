@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>login</title>
+		<link rel="stylesheet" href="css/login.css" />
+		<link rel="stylesheet" href="css/base.css" />
+	</head>
+	<body>
+		<div class="login_top">
+			<ul>
+				<li><img src="images/dangdang.png"/></li>
+			</ul>
+		</div>
+		<div class="login_main">
+			<div class="login_main_module">
+				<span style="margin-left: 45%;font-size: 18px;font-weight: bold;">登录吧</span>
+				<span th:text="${message}" style="color: red;margin-left: 70%;font-size: 18px;font-weight: bold;"></span>
+				&nbsp;<br/>
+				<form action="/login" method="post">
+					<span>用户名：</span>
+					<input type="text"  placeholder="请输入您的用户名" class="login_main_module_text" name="name" /><br /><br />
+					<span>密&nbsp;&nbsp;&nbsp;码：</span>
+					<input type="password"  placeholder="请输入您的密码" class="login_main_module_text" name="pwd"/><br /><br />
+					<input type="submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录" class="login_main_module_button"/>
+				</form>
+				<div class="login_main_register"><a href="/regist">>免费注册</a></div>
+			</div>
+		</div>
+		<div class="login_copyright">&copy;jinan vocational collage</div>
+	</body>
+</html>
